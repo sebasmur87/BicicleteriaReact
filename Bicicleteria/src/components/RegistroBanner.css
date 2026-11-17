@@ -1,0 +1,21 @@
+.registro-banner {
+  background-color: #1b2430;
+  color: white;
+}
+
+.registro-banner p {
+  color: #d5e0d8;
+  margin: 15px auto 115px;
+}
+
+.registro-banner .btn {
+  background-color: #ff6a1a;
+  border-color: #ff6a1a;
+  color: #1b2430;
+  font-weight: bold;
+}
+
+.registro-banner .btn:hover {
+  background-color: #ff6a1a;
+  border-color: #ff6a1a;
+}
