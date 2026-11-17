@@ -1,0 +1,10 @@
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
+
+/* Insignias de estado compartidas (landing y paneles) */
+.bk-status { display: inline-block; border-radius: 30px; padding: 5px 11px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.bk-status.pendiente { background: #fff1d7; color: #a47623; }
+.bk-status.proceso { background: #e0edff; color: #2456a6; }
+.bk-status.lista { background: #e5f3e9; color: #2d7b47; }
+.bk-status.entregada { background: #ece9f7; color: #5a4a9c; }
+.bk-status.cancelada { background: #f6e3e1; color: #a1362d; }

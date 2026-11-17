@@ -1,0 +1,27 @@
+.servicio-tarjeta {
+    background: #fff;
+    border: 1px solid #ece7df;
+    border-radius: 15px;
+    padding: 26px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio-tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(27, 36, 48, 0.1);
+}
+
+.servicio-icono {
+    display: inline-grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background: #fdeee3;
+    color: #d9560f;
+    font-size: 26px;
+}
+
+.servicio-precio {
+    color: #d9560f;
+}

@@ -1,0 +1,33 @@
+.bici-navbar {
+    background-color: #1b2430;
+    padding: 16px 0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+}
+
+.bici-navbar .navbar-brand {
+    font-size: 1.35rem;
+    letter-spacing: 1px;
+    color: #ff6a1a;
+}
+
+.bici-navbar .nav-link {
+    margin-left: 18px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.bici-navbar .nav-link:hover {
+    color: #ff6a1a;
+}
+
+.btn-ingresar {
+    background-color: #ff6a1a;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+}
+
+.btn-ingresar:hover {
+    background-color: #e85a0c;
+    color: #fff;
+}

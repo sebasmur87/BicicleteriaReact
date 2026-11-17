@@ -1,0 +1,35 @@
+#contacto .form-control {
+    border-radius: 10px;
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+#contacto .form-control:focus {
+    border-color: #ff6a1a;
+    box-shadow: 0 0 0 0.2rem #ff6a1a25;
+}
+
+#contacto form .btn {
+    background-color: #1b2430;
+    color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    padding: 12px;
+    border: none;
+}
+
+#contacto form .btn:hover {
+    background-color: #0f161e;
+}
+
+.contacto-info {
+    background: linear-gradient(135deg, #1b2430, #2b3846);
+    color: #fff;
+    border-radius: 15px;
+    padding: 32px;
+}
+
+.contacto-info i {
+    color: #ff6a1a;
+    margin-right: 10px;
+}
