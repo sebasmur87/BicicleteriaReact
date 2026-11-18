@@ -137,39 +137,59 @@ function LoginModal({ mostrar, cerrar, onLogin }) {
       tabIndex="-1"
       style={{ backgroundColor: "rgba(0,0,0,0.65)" }}
     >
-      <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div className="modal-content rounded-4 shadow">
+      <div className="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
 
-          <div className="modal-header border-0">
-            <h4 className="modal-title fw-bold">
-              {modo === "login" ? "Bienvenido" : "Crear cuenta"}
-            </h4>
+        <div
+          className="modal-content border-0 rounded-4 shadow"
+          style={{ maxHeight: "90vh" }}
+        >
+
+          {/* Encabezado */}
+          <div className="modal-header border-0 px-4 pt-4 pb-2">
+
+            <div>
+              <p
+                className="fw-bold mb-2"
+                style={{ color: COLOR_BOTON }}
+              >
+                🚲 PEDAL ANDINO
+              </p>
+
+              <h3 className="modal-title fw-bold">
+                {modo === "login" ? "¡Bienvenido de nuevo!" : "Crea tu cuenta"}
+              </h3>
+
+              <p className="text-muted small mb-0 mt-2">
+                {modo === "login"
+                  ? "Ingresa tus datos para continuar."
+                  : "Completa tus datos y empieza a disfrutar de nuestros productos."}
+              </p>
+            </div>
 
             <button
               type="button"
-              className="btn-close"
+              className="btn-close align-self-start"
               onClick={cerrar}
               aria-label="Cerrar"
             />
+
           </div>
 
-          <div className="modal-body px-4 pb-4">
-
-            <p className="text-muted">
-              {modo === "login"
-                ? "Ingresa a tu cuenta de Bicicletería SA."
-                : "Regístrate para disfrutar de nuestros productos y servicios."}
-            </p>
+          {/* Cuerpo */}
+          <div className="modal-body px-4 pt-3 pb-4">
 
             {modo === "login" ? (
 
               <form onSubmit={iniciarSesion}>
 
                 <div className="mb-3">
-                  <label className="form-label">Correo electrónico</label>
+                  <label className="form-label fw-semibold">
+                    Correo electrónico
+                  </label>
+
                   <input
                     type="email"
-                    className="form-control"
+                    className="form-control form-control-lg"
                     placeholder="correo@ejemplo.com"
                     value={correo}
                     onChange={(e) => setCorreo(e.target.value)}
@@ -178,10 +198,13 @@ function LoginModal({ mostrar, cerrar, onLogin }) {
                 </div>
 
                 <div className="mb-4">
-                  <label className="form-label">Contraseña</label>
+                  <label className="form-label fw-semibold">
+                    Contraseña
+                  </label>
+
                   <input
                     type="password"
-                    className="form-control"
+                    className="form-control form-control-lg"
                     placeholder="Ingresa tu contraseña"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -192,7 +215,7 @@ function LoginModal({ mostrar, cerrar, onLogin }) {
                 <button
                   type="submit"
                   disabled={procesando}
-                  className="btn w-100 text-white py-2"
+                  className="btn w-100 text-white py-3 fw-semibold"
                   style={{ backgroundColor: COLOR_BOTON }}
                 >
                   {procesando ? "Ingresando..." : "Iniciar sesión"}
@@ -204,113 +227,144 @@ function LoginModal({ mostrar, cerrar, onLogin }) {
 
               <form onSubmit={crearCuenta}>
 
-                <div className="mb-3">
-                  <label className="form-label">Nombre</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    autoComplete="given-name"
-                    value={nombre}
-                    onChange={(e) => setNombre(e.target.value)}
-                    required
-                  />
-                </div>
+                <div className="row g-3">
 
-                <div className="mb-3">
-                  <label className="form-label">Apellido</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    autoComplete="family-name"
-                    value={apellido}
-                    onChange={(e) => setApellido(e.target.value)}
-                    required
-                  />
-                </div>
+                  <div className="col-md-6">
+                    <label className="form-label fw-semibold">
+                      Nombre
+                    </label>
 
-                <div className="mb-3">
-                  <label className="form-label">Correo electrónico</label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    autoComplete="email"
-                    placeholder="correo@ejemplo.com"
-                    value={correo}
-                    onChange={(e) => setCorreo(e.target.value)}
-                    required
-                  />
-                </div>
+                    <input
+                      type="text"
+                      className="form-control"
+                      autoComplete="given-name"
+                      value={nombre}
+                      onChange={(e) => setNombre(e.target.value)}
+                      required
+                    />
+                  </div>
 
-                <div className="mb-3">
-                  <label className="form-label">Teléfono</label>
-                  <input
-                    type="tel"
-                    className="form-control"
-                    autoComplete="tel"
-                    value={telefono}
-                    onChange={(e) => setTelefono(e.target.value)}
-                    required
-                  />
-                </div>
+                  <div className="col-md-6">
+                    <label className="form-label fw-semibold">
+                      Apellido
+                    </label>
 
-                <div className="mb-3">
-                  <label className="form-label">Dirección</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    autoComplete="street-address"
-                    value={direccion}
-                    onChange={(e) => setDireccion(e.target.value)}
-                    required
-                  />
-                </div>
+                    <input
+                      type="text"
+                      className="form-control"
+                      autoComplete="family-name"
+                      value={apellido}
+                      onChange={(e) => setApellido(e.target.value)}
+                      required
+                    />
+                  </div>
 
-                <div className="mb-3">
-                  <label className="form-label">
-                    Contraseña (mínimo 8 caracteres)
-                  </label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    autoComplete="new-password"
-                    minLength={8}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
-                </div>
+                  <div className="col-12">
+                    <label className="form-label fw-semibold">
+                      Correo electrónico
+                    </label>
 
-                <div className="mb-4">
-                  <label className="form-label">Confirmar contraseña</label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    autoComplete="new-password"
-                    value={confirmarPassword}
-                    onChange={(e) => setConfirmarPassword(e.target.value)}
-                    required
-                  />
+                    <input
+                      type="email"
+                      className="form-control"
+                      autoComplete="email"
+                      placeholder="correo@ejemplo.com"
+                      value={correo}
+                      onChange={(e) => setCorreo(e.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <div className="col-md-6">
+                    <label className="form-label fw-semibold">
+                      Teléfono
+                    </label>
+
+                    <input
+                      type="tel"
+                      className="form-control"
+                      autoComplete="tel"
+                      value={telefono}
+                      onChange={(e) => setTelefono(e.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <div className="col-md-6">
+                    <label className="form-label fw-semibold">
+                      Dirección
+                    </label>
+
+                    <input
+                      type="text"
+                      className="form-control"
+                      autoComplete="street-address"
+                      value={direccion}
+                      onChange={(e) => setDireccion(e.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <div className="col-md-6">
+                    <label className="form-label fw-semibold">
+                      Contraseña
+                    </label>
+
+                    <input
+                      type="password"
+                      className="form-control"
+                      autoComplete="new-password"
+                      minLength={8}
+                      placeholder="Mínimo 8 caracteres"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <div className="col-md-6">
+                    <label className="form-label fw-semibold">
+                      Confirmar contraseña
+                    </label>
+
+                    <input
+                      type="password"
+                      className="form-control"
+                      autoComplete="new-password"
+                      value={confirmarPassword}
+                      onChange={(e) => setConfirmarPassword(e.target.value)}
+                      required
+                    />
+                  </div>
+
                 </div>
 
                 <button
                   type="submit"
                   disabled={procesando}
-                  className="btn w-100 text-white py-2"
+                  className="btn w-100 text-white py-3 fw-semibold mt-4"
                   style={{ backgroundColor: COLOR_BOTON }}
                 >
                   {procesando ? "Creando cuenta..." : "Crear cuenta"}
                 </button>
 
               </form>
+
             )}
 
-            <p className="text-center mt-3 mb-0">
-              {modo === "login"
-                ? "¿No tienes cuenta? "
-                : "¿Ya tienes cuenta? "}
+            {/* Cambiar entre inicio y registro */}
+            <div className="text-center mt-4">
+
+              <span className="text-muted">
+                {modo === "login"
+                  ? "¿Todavía no tienes cuenta? "
+                  : "¿Ya tienes una cuenta? "}
+              </span>
 
               <a
                 href="#"
+                className="fw-semibold text-decoration-none"
+                style={{ color: COLOR_BOTON }}
                 onClick={(e) => {
                   e.preventDefault();
 
@@ -321,9 +375,11 @@ function LoginModal({ mostrar, cerrar, onLogin }) {
               >
                 {modo === "login" ? "Regístrate" : "Inicia sesión"}
               </a>
-            </p>
+
+            </div>
 
           </div>
+
         </div>
       </div>
     </div>

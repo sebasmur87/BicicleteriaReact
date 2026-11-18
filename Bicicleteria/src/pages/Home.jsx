@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Navbar from "../components/Navbar"
+import Slider from "../components/Slider";
 import Hero from "../components/Hero"
 import Catalogo from "../components/Catalogo"
 import RegistroBanner from "../components/RegistroBanner";
@@ -15,11 +16,12 @@ function Home({ onLogin }) {
   return (
     <>
       <Navbar abrirLogin={() => setMostrarLogin(true)} />
-      <Hero />
+      <Slider />
+      {/* <Hero /> */}
       <Catalogo />
       <RegistroBanner onRegistro={() => setMostrarLogin(true)} />
       <Servicios />
-      <Contacto />
+      {/* <Contacto /> */}
       <Footer />
 
       <LoginModal
